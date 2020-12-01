@@ -19,6 +19,8 @@ RUN apt-get update && apt-get install -y \
   xvfb \
   unzip \
   wget \
+  tzdata \
+  vim \
  # google chrome install
  && wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
  && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list' \
@@ -26,6 +28,8 @@ RUN apt-get update && apt-get install -y \
  && apt-get install -y google-chrome-stable \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
+
+ENV TZ Asia/Tokyo
 
 #google driver
 RUN wget https://chromedriver.storage.googleapis.com/87.0.4280.20/chromedriver_linux64.zip \
@@ -41,7 +45,8 @@ RUN pip install \
     selenium \
     beautifulsoup4 \
     pyvirtualdisplay \
-    transitions
+    transitions \
+    requests
 
 # ********************************************************
 # * Anything else you want to do like clean up goes here *
