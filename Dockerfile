@@ -32,7 +32,7 @@ RUN apt-get update && apt-get install -y \
 ENV TZ Asia/Tokyo
 
 #google driver
-RUN wget https://chromedriver.storage.googleapis.com/87.0.4280.20/chromedriver_linux64.zip \
+RUN wget https://chromedriver.storage.googleapis.com/91.0.4472.101/chromedriver_linux64.zip \
  && unzip chromedriver_linux64.zip -d /usr/local/bin/ \
  && chmod 755 /usr/local/bin/chromedriver
 
