@@ -32,8 +32,9 @@ RUN apt-get update && apt-get install -y \
 ENV TZ Asia/Tokyo
 
 #google driver
-RUN wget https://chromedriver.storage.googleapis.com/91.0.4472.101/chromedriver_linux64.zip \
- && unzip chromedriver_linux64.zip -d /usr/local/bin/ \
+RUN wget https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.92/linux64/chromedriver-linux64.zip \
+ && unzip chromedriver-linux64.zip \
+ && mv chromedriver-linux64/chromedriver /usr/local/bin/ \ 
  && chmod 755 /usr/local/bin/chromedriver
 
 #font install
